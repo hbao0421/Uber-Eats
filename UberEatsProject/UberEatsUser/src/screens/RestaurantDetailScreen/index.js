@@ -4,8 +4,13 @@ import {Ionicons} from "@expo/vector-icons"
 import DishListItem from '../../components/DishListItem';
 import Header from './Header';
 import styles from './style';
+import {useRoute} from '@react-navigation/native'
 const restaurant = restaurants[0];
 const ResaurantDetailsPage = ()=>{
+    const route = useRoute();
+    const id = route.params.id;
+    console.warn(id);
+
     return(
         <View style={styles.page}>    
             <FlatList 
