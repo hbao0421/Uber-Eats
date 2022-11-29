@@ -4,10 +4,11 @@ import {Ionicons} from "@expo/vector-icons"
 import DishListItem from '../../components/DishListItem';
 import Header from './Header';
 import styles from './style';
-import {useRoute} from '@react-navigation/native'
+import {useRoute , useNavigation} from '@react-navigation/native'
 const restaurant = restaurants[0];
 const ResaurantDetailsPage = ()=>{
     const route = useRoute();
+    const navigation = useNavigation();
     const id = route.params.id;
     console.warn(id);
 
@@ -16,9 +17,12 @@ const ResaurantDetailsPage = ()=>{
             <FlatList 
             ListHeaderComponent={() =><Header restaurant={restaurant}/>} 
             data={restaurant.dishes} 
-            renderItem={({item}) =><DishListItem dish={item}/>}>
+            renderItem={({item}) =><DishListItem dish={item}
+            keyExtractor={(item)=>item.name}
+            />}>
             </FlatList>
             <Ionicons
+            onPress={()=>navigation.goBack()}
             name='arrow-back-circle'
             size={45}
             color="white"
