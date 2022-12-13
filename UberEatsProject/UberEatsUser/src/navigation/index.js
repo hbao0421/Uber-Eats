@@ -25,7 +25,7 @@ const Tab = createMaterialBottomTabNavigator();
 const HomeTabs = ()=>{
     return(
         <Tab.Navigator barStyle={{backgroundColor:"white"}}>
-            <Tab.Screen name='Home' component={HomeStackNavigator} options={{tabBarIcon:({color})=><Foundation name='home' size={24} color={color}/> }}/>
+            <Tab.Screen screenOptions={{headerShown:false}} name='Home' component={HomeStackNavigator} options={{tabBarIcon:({color})=><Foundation name='home' size={24} color={color}/> }}/>
             <Tab.Screen name='Orders' component={OrdersStackNavigator} options={{tabBarIcon:({color})=><MaterialIcons name='list-alt' size={24} color={color}/>}}/>
             <Tab.Screen name='Profile' component={ProfileScreen} options={{tabBarIcon:({color})=><FontAwesome5 name='user-alt' size={24} color={color}/>}}/>
         </Tab.Navigator>
@@ -37,8 +37,8 @@ const HomeStackNavigator = ()=>{
     return(
         <HomeStack.Navigator>
             <HomeStack.Screen name='Restaurants' component={HomeScreen}/>
-            <HomeStack.Screen name='Restaurant' component={ResaurantDetaisScreen}/>
-            <HomeStack.Screen name='Dish' component={DishDetailsScreen}/>
+            <HomeStack.Screen name='Restaurant' component={ResaurantDetaisScreen} options={{headerShown:false}}/>
+            <HomeStack.Screen name='Dish' component={DishDetailsScreen}  />
             <HomeStack.Screen name='Basket' component={Basket}/>
         </HomeStack.Navigator>
     );
