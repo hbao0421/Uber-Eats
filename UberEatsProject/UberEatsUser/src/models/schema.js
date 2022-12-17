@@ -113,8 +113,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "Image": {
-                    "name": "Image",
+                "image": {
+                    "name": "image",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -231,5 +231,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.2",
-    "version": "ed5975fe2800d81fea97a0fafcb20a3c"
+    "version": "28e9be045cc2196682a85c8f2bdbeb9e"
 };

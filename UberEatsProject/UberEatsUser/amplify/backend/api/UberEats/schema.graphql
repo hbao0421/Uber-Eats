@@ -10,7 +10,7 @@ type Dish @model @auth(rules: [{allow: public}]) {
 type Restaurant @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  Image: String!
+  image: String!
   deliveryFee: Float!
   minDeliveryTime: Int!
   maxDeliveryTime: Int!

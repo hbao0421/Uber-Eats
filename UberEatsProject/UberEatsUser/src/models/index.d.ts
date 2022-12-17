@@ -49,7 +49,7 @@ type EagerRestaurant = {
   };
   readonly id: string;
   readonly name: string;
-  readonly Image: string;
+  readonly image: string;
   readonly deliveryFee: number;
   readonly minDeliveryTime: number;
   readonly maxDeliveryTime: number;
@@ -69,7 +69,7 @@ type LazyRestaurant = {
   };
   readonly id: string;
   readonly name: string;
-  readonly Image: string;
+  readonly image: string;
   readonly deliveryFee: number;
   readonly minDeliveryTime: number;
   readonly maxDeliveryTime: number;
