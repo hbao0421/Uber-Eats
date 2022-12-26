@@ -16,10 +16,13 @@ const ResaurantDetailsPage = ()=>{
     const id = route.params.id;
     // console.warn(id);
     useEffect(()=>{
+        if(!id){
+            return;
+        }
         DataStore.query(Restaurant,id).then(setRestaurant);
         DataStore.query(Dish,(dish)=>dish.restaurantID.eq(id)).then(setDishes);
         // console.log(dishes.length);
-    },[]);
+    },[id]);
     if(!restaurant){
         return <ActivityIndicator size={"large"} color="gray"/>
     }
