@@ -16,7 +16,7 @@ const DishDetailsScreen  = ()=>{
 
     useEffect(()=>{
         DataStore.query(Dish,id).then(setDish);
-    },[])
+    },[id])
 
     const onMinus = ()=>{
         if(quantity===1){
