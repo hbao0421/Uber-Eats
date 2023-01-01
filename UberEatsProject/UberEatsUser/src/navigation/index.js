@@ -9,14 +9,15 @@ import OrderDetails from '../screens/OrderDetails';
 import ProfileScreen from '../screens/ProfileScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {Foundation,FontAwesome5,MaterialIcons} from '@expo/vector-icons';
+import { useAuthContext } from '../contexts/AuthContext';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = ()=>{
+    const {dbUser} = useAuthContext();
     return(
         <Stack.Navigator initialRouteName="Home Tabs" screenOptions={{headerShown:false}}>
-            <Stack.Screen name='Home Tabs' component={HomeTabs}/>
-            {/* <Stack.Screen name='Restaurant' component={ResaurantDetaisScreen} options={{headerShown:false}}/> */}
+            {dbUser?(<Stack.Screen name='Home Tabs' component={HomeTabs}/>):(<Stack.Screen name='Profile' component={ProfileScreen}/>)}
         </Stack.Navigator>
     )
 }
